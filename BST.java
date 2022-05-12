@@ -40,28 +40,12 @@ public class BST<K extends Comparable<K>, V> {
 
     public V get(K key) {
         Node temp = root;
-//        if (temp == null) {
-//            return null;
-//        }
 
         if (temp.key == key) {
             return temp.value;
         }
 
         V gettingValue = null;
-//        if (temp != null) {
-//            get(temp.right.key);
-//            if (temp.key == key) {
-////                return root.value;
-//                gettingValue = temp.value;
-//            }
-//            get(temp.left.key);
-//        }
-//
-//        if (((Comparable<K>)temp.key).compareTo(key) == 0) {
-//            gettingValue = temp.value;
-//        }
-
         Node prevElem = null;
         while (temp != null) {
             if (((Comparable<K>)temp.key).compareTo(key) < 0) {
@@ -95,31 +79,14 @@ public class BST<K extends Comparable<K>, V> {
             }
 
             if (((Comparable<K>)temp.key).compareTo(key) == 0) {
-                // элемент найдет, а дальше хуй знает как, если он не последний
                 if (temp.right != null) {
-                    
+
                 }
             }
         }
     }
 
     private void printTree(Node node) {
-//        Node temp = root;
-
-//        while (temp != null) {
-//            if (temp != null) {
-//                System.out.print(temp.value + " ");
-//                temp = temp.left;
-//            } else {
-//                System.out.print(temp.value + " ");
-//                temp = temp.right;
-//            }
-//        }
-
-//        if (temp != null) {
-//            printTree();
-//        }
-
         if (node != null) {
             printTree(node.right);
             System.out.print(node.value + " ");

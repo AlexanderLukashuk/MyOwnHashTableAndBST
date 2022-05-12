@@ -39,10 +39,6 @@ public class MyHashTable<K, V> {
     public  MyHashTable() {
         size = 0;
         chainArray = new HashNode[M];
-
-//        for (int i = 0; i < M; i++) {
-//            chainArray[i] = null;
-//        }
     }
 
     public  MyHashTable(int M) {
@@ -72,62 +68,6 @@ public class MyHashTable<K, V> {
     }
 
     public void put(K key, V value) {
-//        int bucket = hash(key);
-//        int hashCode = hashCode(key);
-////        HashNode<K, V> head = chainArray.;
-////        HashNode<K, V> head = null;
-////        for (int i = 0; i < size; i++) {
-////            if (i == bucket) {
-////                head = chainArray[i];
-////            }
-////        }
-////        head = chainArray[bucket];
-//        HashNode<K, V> head = chainArray[bucket];
-//
-//        while (head != null) {
-//            if (head.key.equals(key)) {
-//                head.value = value;
-//                return;
-//            }
-//            head = head.next;
-//        }
-//
-//        size++;
-////        for (int i = 0; i < size; i++) {
-////            if (i == bucket) {
-////                head = chainArray[i];
-////            }
-////        }
-//        head = chainArray[bucket];
-//        HashNode<K, V> newNode = new HashNode<K, V>(key, value);
-//        newNode.next = head;
-//        for (int i = 0; i < size; i++) {
-//            if (i == bucket) {
-//                chainArray[i] = newNode;
-//            }
-//        }
-//
-//        if ((1.0 * size) / M >= 0.7) {
-////            HashNode<K, V>[] temp = chainArray;
-//            HashNode<K, V>[] temp = new HashNode[M];
-//            for (int i = 0; i < M; i++) {
-//                temp[i] = chainArray[i];
-//            }
-//            M = M * 2;
-//            chainArray = new HashNode[M];
-//            size = 0;
-//            for (int i = 0; i < M; i++) {
-//                chainArray[i] = null;
-//            }
-//
-//            for (HashNode<K, V> node : temp) {
-//                while (node != null) {
-//                    put(node.key, node.value);
-//                    node = node.next;
-//                }
-//            }
-//        }
-
         if (size == M) {
             return;
         } else {
@@ -164,48 +104,6 @@ public class MyHashTable<K, V> {
     }
 
     public V remove(K key) {
-//        int bucketIndex = hash(key);
-//        // Get head of chain
-//        HashNode<K, V> head = chainArray[bucketIndex];
-//
-//        // Search for key in its chain
-//        HashNode<K, V> prev = null;
-//        while (head != null) {
-//            // If Key found
-//            if (head.key.equals(key))
-//                break;
-//
-//            // Else keep moving in chain
-//            prev = head;
-//            head = head.next;
-//        }
-//
-//        // If key was not there
-//        if (head == null)
-//            return null;
-//
-//        // Reduce size
-//        size--;
-//
-//        // Remove key
-//        if (prev != null)
-//            prev.next = head.next;
-//        else
-//            chainArray[bucketIndex] = head.next;
-//
-//        return head.value;
-
-//        int hash = hash(key);
-//        HashNode temp = chainArray[hash];
-//        while (temp.next != null) {
-//            temp = temp.next;
-//        }
-//        V removedValue = (V) temp.value;
-//        temp = null;
-//        size--;
-//
-//        return removedValue;
-
         int hasCode = hashCode(key);
         V removedValue = null;
         if(chainArray[hasCode] == null){
@@ -232,7 +130,6 @@ public class MyHashTable<K, V> {
         }
         size--;
         return removedValue;
-
     }
 
     public boolean contains(V value) {
@@ -274,9 +171,7 @@ public class MyHashTable<K, V> {
     }
 
     public void printHashTable() {
-        // цикл хуйня, выводит не все элементы
         for (int i = 0; i < size; i++) {
-//            System.out.println(chainArray[i]);
 
             HashNode head = chainArray[i];
 
